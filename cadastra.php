@@ -1,4 +1,6 @@
 <?php include('cabecalho.php');?>
+<?php include('function.php')?>
+<?php include('conecta.php')?>
    <h1>Formulário de Cadastro</h1>
       <form action="apresenta-produto.php"method="post">
       	<table class="table">
@@ -18,7 +20,9 @@
 			<?php
 			   foreach(listaCategoria($conexao) as $categoria){?>
 			   <tr>
-			   <td><input class="btn btn-primary"type="radio" value="categorias"><?php $categoria['nome'] ?> </td>
+			   <td>
+			   <input class=""type="radio" value="<?=$categoria['ID']?>"><span><?= $categoria['nome']?></span><br>
+			   </td>
       	      </tr>
 			  <?php 
 			}
