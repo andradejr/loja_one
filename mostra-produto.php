@@ -24,7 +24,9 @@ foreach(mostraProduto($conexao) as $produtos){ ?>
 	<td><?=  $produtos['nome'];?></td>
 	<td><?=  $produtos['preco'];?></td>
 	<td><?=  substr($produtos['descricao'],0,40)?></td>
-	<input type="hidden" name="id" value="<?=$produtos['id']?>" />
+	<td><?= $produtos['categoria_nome']?></td>
+	<input type="hidden" name="id" value="<?=$produtos['ID']?>"/>
+	<td><a href="alterar-produto.php?id=<?= $produtos["ID"]?>"class="btn btn-primary">Alterar</a></td>
 	<td><button type="submit" class="btn btn-danger">Remover</button></td>
   </tr>
 
